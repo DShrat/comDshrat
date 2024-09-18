@@ -3,9 +3,9 @@ import "../app/globals.css";
 
 export default function ProjectPages(){
     return(
-        <main className="grid min-h-screen grid-cols items-center justify-between p-3 bg-gray-900 mx-auto">
+        <main className="font-mono grid min-h-screen grid-cols items-center justify-between p-3 bg-gray-900 mx-auto">
             <section>
-                <p className='text-3xl font-bold'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, sunt!</p>
+                <p className='text-3xl font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, tempore!</p>
                 <section>
                     <picture>
                         <img src="https://pbs.twimg.com/profile_images/1633247750010830848/8zfRrYjA_400x400.png" alt="" className="rounded-md h-25 w-25 p-1 mx-auto" />

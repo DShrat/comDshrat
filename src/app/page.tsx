@@ -68,7 +68,48 @@ const otherProjects = [
   },
 ];
 
-
+export const contentProjects = [
+  {
+    name: "Nekoya",
+    imgUrl: "",
+    description: "",
+    purposes: "",
+    purposesDecs: "",
+    technos: "",
+    technosDecs: "",
+    partners: ""
+  },
+  {
+    name: "Nekoya Mobile",
+    imgUrl: "",
+    description: "",
+    purposes: "",
+    purposesDecs: "",
+    technos: "",
+    technosDecs: "",
+    partners: ""
+  },
+  {
+    name: "Klik Fauna",
+    imgUrl: "",
+    description: "",
+    purposes: "",
+    purposesDecs: "",
+    technos: "",
+    technosDecs: "",
+    partners: ""
+  },
+  {
+    name: "Don's Website",
+    imgUrl: "",
+    description: "",
+    purposes: "",
+    purposesDecs: "",
+    technos: "",
+    technosDecs: "",
+    partners: ""
+  },
+]
 
 
 export default function Home() {
@@ -96,7 +137,7 @@ export default function Home() {
                     <img src={project.imgUrl} alt="" className="rounded-md h-24 w-24 p-1 mx-auto" />
                   </picture>
                 </div>
-                <Link href='project'>
+                <Link href={`./${encodeURIComponent(project.name)}`}>
                   <button type="button" className="grid rounded-md bg-orange-700 mx-auto mt-1 box-sizing h-7">
                     <span className="px-8">view more</span>
                   </button>

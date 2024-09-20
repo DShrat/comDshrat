@@ -1,11 +1,27 @@
 import Link from 'next/link';
+import { contentProjects } from '../app/page'; 
 import "../app/globals.css";
+import { useRouter } from 'next/router';
 
 export default function ProjectPages(){
+    const router = useRouter();
+    const { name } = router.query;
+
+    const decodedName = decodeURIComponent(name as string).toLowerCase();
+
+    const project = contentProjects.find(
+        (proj) => proj.name.toLowerCase() === decodedName
+    );
+    
+    console.log(project)
+
+    if (!project) {
+        return <div>Project not found woe</div>;
+    }
     return(
         <main className="font-mono grid min-h-screen grid-cols items-center justify-between p-3 bg-gray-900 mx-auto">
             <section>
-                <p className='text-3xl font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, tempore!</p>
+                <p className='text-3xl font-bold'>{project.name}Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, tempore!</p>
                 <section>
                     <picture>
                         <img src="https://pbs.twimg.com/profile_images/1633247750010830848/8zfRrYjA_400x400.png" alt="" className="rounded-md h-25 w-25 p-1 mx-auto" />

@@ -2,7 +2,7 @@ export const contentProjects = [
     {
       id: 1,
       name: "Nekoya",
-      urlWeb: "nekoya.moe.team",
+      urlWeb: "https://nekoya.moe.team",
       imgUrl: "https://nekoya.moe.team/img/logo_transparent.webp",
       description: "this is a website make for my group assignment in web development class, using javascript, css and ejs. my role as front-end developer also ui/ux designer using javascript, css and figma",
       purposesDecs: "",
@@ -39,7 +39,7 @@ export const contentProjects = [
     {
       id: 3,
       name: "Klik-Fauna",
-      urlWeb: "klikfauna.com",
+      urlWeb: "https://klikfauna.com",
       imgUrl: "https://klikfauna.com/assets/logo-23d38f2b.png",
       description: "Klik Fauna is a website for pet related trading business, selling pet, pet food and pet accessories, using vue, css and figma for design. my role as front-end developer and ui/ux designer",
       purposesDecs: "",
@@ -58,7 +58,7 @@ export const contentProjects = [
     {
       id: 4,
       name: "Don's-Website",
-      urlWeb: "",
+      urlWeb: "https://dshrat.com",
       imgUrl: "https://iili.io/dsakDQI.png",
       description: "this is my personal website you're seeing right now, i made this using react typescript and tailwinds",
       purposesDecs: "",

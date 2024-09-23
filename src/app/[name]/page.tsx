@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { contentProjects } from '../utils/data/projects'; 
+import { contentProjects } from '../utils/data/contentprojects'; 
 import "../globals.css";
 import { useParams } from 'next/navigation';
 
@@ -21,32 +21,32 @@ export default function ProjectPages(){
         return <p className="text-center text-white">Project not found</p>;
     }
     return(
-        <main className="font-mono grid min-h-screen grid-cols items-center justify-between p-3 bg-gray-900 mx-auto">
+        <main className="formatPage">
             <section>
-                <p className='text-3xl font-bold'>{project.name.replace('-', ' ')}</p>
+                <p className='text-3xl font-bold '>{project.name.replace('-', ' ')}</p>
                 <section>
                     <picture>
-                        <img src={project.imgUrl} alt="" className="rounded-md h-25 w-25 p-1 mx-auto" />
+                        <img src={project.imgUrl} alt="" className="rounded-md p-1 mx-auto xs:h-64 xs:w-64 md:h-96 md:w-96"/>
                     </picture>
-                    <p>{project.description}</p>
+                    <p className='xs:text-l lg:text-xl'>{project.description}</p>
                 </section>
            </section>
            <section>
                 {project.urlWeb && (
                     <div className='mt-5 box-sizing hover:text-blue-200'>
-                        <a href={project.urlWeb}>{project.urlWeb}</a>
+                        <a href={project.urlWeb} className='xs:text-l lg:text-xl'>{project.urlWeb}</a>
                     </div>
                 )}
                 {project.purposesDecs && (  
-                    <div className="subContent mt-5 box-sizing rounded-md border-2">
+                    <div className="subContent">
                         <p className='text-xl px-3 py-2'>Purposes</p>
-                        <p className='detailCard px-3 py-2'>{project.purposesDecs}</p>
+                        <p className='detailCard px-3 py-2 xs:text-l lg:text-xl'>{project.purposesDecs}</p>
                     </div>
                 )}
                 {project.technosDecs && (
-                    <div className="subContent mt-5 box-sizing rounded-md border-2">
+                    <div className="subContent">
                         <p className='text-xl px-3 py-2'>technology</p>
-                        <div className='px-7 py-2'>
+                        <div className='px-7 py-2 xs:text-l lg:text-xl'>
                             {project.technosDecs.map((item) => (
                             <li key={item.name}>
                                 {item.name}
@@ -56,9 +56,9 @@ export default function ProjectPages(){
                     </div>    
                 )}
                 {project.partners && (
-                    <div className="subContent mt-5 box-sizing rounded-md border-2">
+                    <div className="subContent">
                         <p className='text-xl px-3 py-2'>partners</p>
-                        <div className='px-7 py-2'>
+                        <div className='px-7 py-2 xs:text-l lg:text-xl'>
                             {project.partners.map((item) => (
                             <li key={item.name}>
                                 <a href={item.gitLink}>{item.name}</a>
@@ -71,7 +71,7 @@ export default function ProjectPages(){
            <section className='mt-5'>
                 <Link href='/'>
                     <button className='box-sizing border-2 rounded-md w-full'>
-                        <p className=''>Back</p>
+                        <p className='xs:text-l lg:text-xl'>Back</p>
                     </button>
                 </Link>
            </section>

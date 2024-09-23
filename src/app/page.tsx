@@ -1,104 +1,38 @@
 import Link from 'next/link';
 import "../app/globals.css";
 import { Router } from 'react-router';
-
-const projects = [
-  {
-    name: "Nekoya",
-    imgUrl: "https://nekoya.moe.team/img/logo_transparent.webp",
-    alt: "Profile Image 1",
-    url: "https://nekoya.moe.team",
-    gith: "https://github.com/Nekoya-Site/Web/"
-  },
-  {
-    name: "Nekoya Mobile",
-    imgUrl: "https://nekoya.moe.team/img/logo_transparent.webp",
-    alt: "Profile Image 2",
-    url: "",
-    gith: "https://github.com/Nekoya-Site/App/"
-  },
-  {
-    name: "Klik Fauna",
-    imgUrl: "https://klikfauna.com/assets/logo-23d38f2b.png",
-    alt: "Profile Image 3",
-    url: "https://klikfauna.com/",
-    gith: ""
-  },
-  {
-    name: "Don's Website",
-    imgUrl: "https://pbs.twimg.com/profile_images/1661161645857710081/6WtDIesg_400x400.png",
-    alt: "Profile Image 4",
-    url: "https://dshrat.com/",
-    gith: ""
-  },
-];
-
-const sosmeds = [
-  {
-    name: "Github",
-    imgUrl: "https://pbs.twimg.com/profile_images/1633247750010830848/8zfRrYjA_400x400.png",
-    url: "https://github.com/DShrat",
-    alt: "Profile Image 1"
-  },
-  {
-    name: "Twitter",
-    imgUrl: "https://pbs.twimg.com/profile_images/1683899100922511378/5lY42eHs_400x400.jpg",
-    url: "https://x.com/dshrat_",
-    alt: "Profile Image 2"
-  },
-  {
-    name: "Youtube",
-    imgUrl: "https://pbs.twimg.com/profile_images/1427292844612595720/RC1YSvuT_400x400.jpg",
-    url: "https://www.youtube.com/@JOH1_YT",
-    alt: "Profile Image 3"
-  },
-  {
-    name: "LinkedIn",
-    imgUrl: "https://pbs.twimg.com/profile_images/1661161645857710081/6WtDIesg_400x400.png",
-    url: "https://www.linkedin.com/in/donni-suharyanto-387495211/",
-    alt: "Profile Image 4"
-  },
-];
-
-const otherProjects = [
-  {
-    name: "deepfake detection",
-    imgUrl: "",
-    url: "https://github.com/DShrat/deepfake-detection",
-    alt:""
-  },
-];
-
-
+import { sosmeds } from '../app/utils/data/socialmedias'
+import { projects } from '../app/utils/data/projects'
+import { otherProjects } from '../app/utils/data/otherprojects'
 
 export default function Home() {
   return (
-    <main className="font-mono grid min-h-screen grid-cols items-center justify-between p-3 bg-gray-900 mx-auto">
+    <main className="formatPage">
       <section>
-        <p className="capitalize">Welcome to Don&#39;s personal Website.</p>
+        <p className="capitalize xs:text-l lg:text-xl">Welcome to Don&#39;s personal Website.</p>
       </section>
 
       <section className="mt-4">
-        <p className="capitalize">hi, i&#39;m Donni Suharyanto, a passionate front-end developer with a love for learn new things. with a background in front-end website development, qa and also computer vision, i specialize in front-end web development using react and vue with css or tailwinds framework.</p>
+        <p className="capitalize xs:text-l lg:text-xl">hi, i&#39;m Donni Suharyanto, a passionate front-end developer with a love for learn new things. with a background in front-end website development, qa and also computer vision, i specialize in front-end web development using react and vue with css or tailwinds framework.</p>
       </section>
         
 
-      <section className="subContent projectList mt-5">
-        <div className="box-sizing h-5 rounded-md bg-orange-500"></div>
-        <p className="capitalize text-2xl mb-4 -mt-5 font-bold ml-3">Project</p>
-        <div className="grid grid-cols-2 gap-3 mx-auto justify-items-center">
+      <section className="projectList mt-5">
+        <div className="orangeBar"></div>
+        <p className="titleSubContent xs:text-2xl md:text-3xl lg:text-4xl">Project</p>
+        <div className="cardDiv">
           {projects.map((project, index) => (
             <div key={index} >
               <div className="box-border p-2 border-2 rounded-md">
-                <div className='mx-auto'>{project.name}</div>
+                <div className='mx-auto xs:text-l md:text-xl'>{project.name}</div>
                 <div className="image-content">
                   <picture>
-                    <img src={project.imgUrl} alt="" className="rounded-md h-24 w-24 p-1 mx-auto" />
+                    <img src={project.imgUrl} alt="" className="rounded-md p-1 mx-auto xs:h-24 xs:w-24 md:h-32 md:w-32"/>
                   </picture>
                 </div>
                 <Link href={`./${encodeURIComponent(project.name.replace(/\s/g, '-'))}`}>
                   <button type="button" className="grid rounded-md bg-orange-700 mx-auto mt-1 box-sizing h-7">
-                    <span className="px-8">view more</span>
+                    <span className="px-8 xs:text-l ">view more</span>
                   </button>
                 </Link>
               </div>
@@ -109,15 +43,15 @@ export default function Home() {
       </section>
       
       <section>
-        <div className="subContent sosmed mt-5">
-          <div className="box-sizing h-5 rounded-md bg-orange-500"></div>
-          <p className="capitalize text-2xl mb-4 -mt-5 font-bold ml-3">Social Media</p>
-          <div className="grid grid-cols-3 gap-3 mx-auto justify-items-center">
+        <div className="sosmed mt-5">
+          <div className="orangeBar"></div>
+          <p className="titleSubContent xs:text-2xl md:text-3xl">Social Media</p>
+          <div className="cardDiv">
             {sosmeds.map((sosmed, index) => (
               <div key={index} >
                 <Link href = {sosmed.url}>
                   <picture>
-                    <img className="rounded-md h-24 w-24" src={sosmed.imgUrl} alt={sosmed.alt}/>
+                    <img className="rounded-md xs:h-24 xs:w-24 lg:h-32 lg:w-32" src={sosmed.imgUrl} alt={sosmed.alt}/>
                   </picture>
                 </Link>
               </div>
@@ -127,10 +61,10 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="subContent other mt-5">
-          <div className="box-sizing h-5 rounded-md bg-orange-500"></div>
-          <p className="capitalize text-2xl mb-4 -mt-5 font-bold ml-3">Other Project</p>
-          <div className="grid grid-cols-2 gap-3 mx-auto justify-items-center">
+        <div className="other mt-5">
+          <div className="orangeBar"></div>
+          <p className="titleSubContent xs:text-2xl md:text-3xl">Other Project</p>
+          <div className="cardDiv">
           {otherProjects.length > 1 ? (
               otherProjects.map((othProject, index) => (
                 <div key={index}>
@@ -143,7 +77,7 @@ export default function Home() {
                         <img
                           src={othProject.imgUrl}
                           alt={othProject.alt}
-                          className="rounded-md h-24 w-24 p-1 mx-auto"
+                          className="imgInsideCardProject"
                         />
                       </picture>
                     </div>
@@ -174,7 +108,7 @@ export default function Home() {
       <section>
         <div className="box-border border-2 mt-5"></div>
         <div className="grid grid-cols-1 justify-items-start">
-          <p className="footerConter">Contact me: <a href="mailto:dshrat29@gmail.com">dshrat29@gmail.com</a></p>
+          <p className="footerConter xs:text-l lg:text-xl">Contact me: <a href="mailto:dshrat29@gmail.com">dshrat29@gmail.com</a></p>
         </div>
       </section>
       

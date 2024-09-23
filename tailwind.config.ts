@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   content: [
@@ -16,8 +17,13 @@ const config: Config = {
       fontFamily: {
         mono: ['Fira Mono', 'monospace'],
       },
+      screens: {
+        'xs': '320px',
+        ...defaultTheme.screens,
+      }
     },
   },
+  variants: {},
   plugins: [],
 };
 export default config;

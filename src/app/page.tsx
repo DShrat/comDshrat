@@ -2,7 +2,7 @@ import Link from 'next/link';
 import "../app/globals.css";
 import { Router } from 'react-router';
 import { sosmeds } from '../app/utils/data/socialmedias'
-import { projects } from '../app/utils/data/projects'
+import { contentProjects } from '../app/utils/data/projects'
 import { otherProjects } from '../app/utils/data/otherprojects'
 
 export default function Home() {
@@ -21,17 +21,17 @@ export default function Home() {
         <div className="orangeBar"></div>
         <p className="titleSubContent xs:text-2xl md:text-3xl lg:text-4xl">Project</p>
         <div className="cardDiv">
-          {projects.map((project, index) => (
+          {contentProjects.map((project, index) => (
             <div key={index} >
               <div className="box-border p-2 border-2 rounded-md">
-                <div className='mx-auto xs:text-l md:text-xl'>{project.name}</div>
+                <div className='mx-auto xs:text-l md:text-xl'>{project.name.replace('-', ' ')}</div>
                 <div className="image-content">
                   <picture>
-                    <img src={project.imgUrl} alt="" className="rounded-md p-1 mx-auto xs:h-24 xs:w-24 md:h-32 md:w-32"/>
+                    <img src={project.imgUrl} alt="" className="imgCard"/>
                   </picture>
                 </div>
-                <Link href={`./${encodeURIComponent(project.name.replace(/\s/g, '-'))}`}>
-                  <button type="button" className="grid rounded-md bg-orange-700 mx-auto mt-1 box-sizing h-7">
+                <Link href={`./Projects/${encodeURIComponent(project.name.replace(/\s/g, '-'))}`}>
+                  <button type="button" className="buttonView">
                     <span className="px-8 xs:text-l ">view more</span>
                   </button>
                 </Link>
@@ -65,42 +65,25 @@ export default function Home() {
           <div className="orangeBar"></div>
           <p className="titleSubContent xs:text-2xl md:text-3xl">Other Project</p>
           <div className="cardDiv">
-          {otherProjects.length > 1 ? (
-              otherProjects.map((othProject, index) => (
-                <div key={index}>
-                  <div className="box-border p-2 border-2 rounded-md">
-                    <div>
-                      <p>{othProject.name}</p>
-                    </div>
-                    <div className="image-content">
-                      <picture>
-                        <img
-                          src={othProject.imgUrl}
-                          alt={othProject.alt}
-                          className="imgInsideCardProject"
-                        />
-                      </picture>
-                    </div>
-                    <button className="grid rounded-md bg-orange-700 mx-auto mt-1 box-sizing h-7">
-                      <span className="px-8">view more</span>
-                    </button>
-                  </div>
-                </div>
-              ))
-            ) : (
+          {otherProjects.map((othProject, index) => (
+            <div key={index}>
               <div className="box-border p-2 border-2 rounded-md">
-                <p className="text-xl font-bold text-center">Coming Soon</p>
+                <div>
+                  <p className='mx-auto xs:text-l md:text-xl'>{othProject.name.replace('-', ' ')}</p>
+                </div>
                 <div className="image-content">
                   <picture>
-                    <img
-                      src="https://via.placeholder.com/150"
-                      alt="Placeholder"
-                      className="rounded-md h-24 w-24 p-1 mx-auto"
-                    />
+                    <img src={othProject.imgUrl} alt='' className="imgCard" />
                   </picture>
                 </div>
+                <Link href={`./OtherProjects/${encodeURIComponent(othProject.name.replace(/\s/g, '-'))}`}>
+                  <button type="button" className="buttonView">
+                    <span className="px-8 xs:text-l ">view more</span>
+                  </button>
+                </Link>
               </div>
-            )}
+            </div>
+          ))}
           </div>
         </div>
       </section>

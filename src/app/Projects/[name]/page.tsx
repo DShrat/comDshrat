@@ -1,8 +1,8 @@
 "use client";
 
 import Link from 'next/link';
-import { contentProjects } from '../utils/data/contentprojects'; 
-import "../globals.css";
+import { contentProjects } from '../../utils/data/projects'; 
+import "../../globals.css";
 import { useParams } from 'next/navigation';
 
 export default function ProjectPages(){

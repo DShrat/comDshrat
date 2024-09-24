@@ -35,7 +35,7 @@ body {
 }
 
 .formatPage{
-  @apply font-mono grid min-h-screen items-center justify-between bg-gray-900 mx-auto xs:p-3 md:px-32 md:pt-12 lg:px-64 lg:pt-28;
+  @apply font-mono grid min-h-screen items-center justify-between bg-gray-900 mx-auto xs:p-3 md:px-28 md:pt-12 lg:px-56 lg:pt-28;
 }
 
 .orangeBar{
@@ -52,6 +52,14 @@ body {
 
 .cardDiv{
   @apply grid mx-auto justify-items-center xs:grid-cols-2 xs:gap-3 sm:grid-cols-3 xl:grid-cols-4;
+}
+
+.imgCard{
+  @apply rounded-md p-1 mx-auto xs:h-24 xs:w-24 md:h-32 md:w-32;
+}
+
+.buttonView{
+  @apply grid rounded-md bg-orange-700 mx-auto mt-1 h-7;
 }
 
 

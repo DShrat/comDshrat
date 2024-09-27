@@ -3,10 +3,20 @@
 import Link from 'next/link';
 import { otherProjects } from '../../utils/data/otherprojects'; 
 import "../../globals.css";
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function ProjectPages(){
     const params = useParams();
+    const router = useRouter();
+
+    // Redirect to another page if the route is "mandelbrot"
+    useEffect(() => {
+        if (params?.name === "URL-Shortener") {
+            // Redirect to another page, for example, "/special-page"
+            router.push(`/special-page/${encodeURIComponent(params.name.replace(/\s/g, '-'))}`);
+        }
+    }, [params, router]);
 
     // Check if params exist and params.name is available
     if (!params?.name) {

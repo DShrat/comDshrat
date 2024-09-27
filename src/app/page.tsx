@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
                 <Link href={`./OtherProjects/${encodeURIComponent(othProject.name.replace(/\s/g, '-'))}`}>
                   <button type="button" className="buttonView">
-                    <span className="px-8 xs:text-l ">view more</span>
+                    <span className="px-8 xs:text-l">view more</span>
                   </button>
                 </Link>
               </div>

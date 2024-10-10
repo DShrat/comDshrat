@@ -36,22 +36,20 @@ export const otherProjects = [
     },
     {
       id: 3,
-      name: "URL-Shortener",
-      urlWeb: "",
+      name: "Landing-Page",
+      urlWeb: "https://landingpage.dshrat.com",
       imgUrl: "https://iili.io/dsUtVa9.png",
-      description: "SoxialPlace is a mobile app to give a recommended place to eat also for users to sharing about their experience in a restaurant using flutter dart.",
+      description: "",
       purposesDecs: "",
       technosDecs: [
-        {name: "dart"},
+        {name: "React"},
+        {name: "Next"},
+        {name: "Tailwinds"},
       ],
       partners: [
         {name: "Donni Suharyanto", gitLink: "https://github.com/DShrat"},
-        {name: "Joshua Steven", gitLink: "https://github.com/JoshuaNope"},
-        {name: "kelvin G'yandi", gitLink: "https://github.com/kelvingyandi93"},
-        {name: "kelvin Samuel", gitLink: "https://github.com/Kelvin2212"},
-        {name: "Wiliam", gitLink: "https://github.com/willzed26"},
       ],
-      gith: "https://github.com/willzed26/SoxialPlace",
+      gith: "",
     },
     
 ];

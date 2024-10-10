@@ -28,7 +28,7 @@ export default function ProjectPages(){
                     <picture>
                         <img src={project.imgUrl} alt="" className="rounded-md p-1 mx-auto xs:h-64 xs:w-64 md:h-96 md:w-96"/>
                     </picture>
-                    <p className='xs:text-l lg:text-xl'>{project.description}</p>
+                    <p className='xs:text-l lg:text-xl text-justify '>{project.description}</p>
                 </section>
            </section>
            <section>
@@ -69,7 +69,7 @@ export default function ProjectPages(){
                 )}
            </section>
            <section className='mt-5'>
-                <Link href='/'>
+                <Link href='/mainPage/'>
                     <button className='box-sizing border-2 rounded-md w-full'>
                         <p className='xs:text-l lg:text-xl'>Back</p>
                     </button>

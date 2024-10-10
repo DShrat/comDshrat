@@ -20,6 +20,9 @@ const config: Config = {
       screens: {
         'xs': '320px',
         ...defaultTheme.screens,
+      },
+      zIndex: {
+        '-10': '-10',
       }
     },
   },

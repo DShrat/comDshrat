@@ -10,11 +10,9 @@ export default function ProjectPages(){
     const params = useParams();
     const router = useRouter();
 
-    // Redirect to another page if the route is "mandelbrot"
     useEffect(() => {
-        if (params?.name === "URL-Shortener") {
-            // Redirect to another page, for example, "/special-page"
-            router.push(`/special-page/${encodeURIComponent(params.name.replace(/\s/g, '-'))}`);
+        if (typeof window !== 'undefined' && params?.name === "Landing-Page") {
+            router.push("https://landingpage.dshrat.com");
         }
     }, [params, router]);
 
@@ -38,7 +36,7 @@ export default function ProjectPages(){
                     <picture>
                         <img src={project.imgUrl} alt="" className="rounded-md p-1 mx-auto xs:h-64 xs:w-64 md:h-96 md:w-96"/>
                     </picture>
-                    <p className='xs:text-l lg:text-xl'>{project.description}</p>
+                    <p className='xs:text-l lg:text-xl text-justify '>{project.description}</p>
                 </section>
            </section>
            <section>
@@ -54,7 +52,7 @@ export default function ProjectPages(){
                 )}
                 {project.purposesDecs && (  
                     <div className="subContent">
-                        <p className='text-xl px-3 py-2'>Purposes</p>
+                        <p className='text-xl px-3 py-2 text-justify'>Purposes</p>
                         <p className='detailCard px-3 py-2 xs:text-l lg:text-xl'>{project.purposesDecs}</p>
                     </div>
                 )}
@@ -84,7 +82,7 @@ export default function ProjectPages(){
                 )}
            </section>
            <section className='mt-5'>
-                <Link href='/'>
+                <Link href='/mainPage/'>
                     <button className='box-sizing border-2 rounded-md w-full'>
                         <p className='xs:text-l lg:text-xl'>Back</p>
                     </button>

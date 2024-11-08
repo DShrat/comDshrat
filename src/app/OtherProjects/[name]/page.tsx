@@ -11,8 +11,13 @@ export default function ProjectPages(){
     const router = useRouter();
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && params?.name === "Landing-Page") {
-            router.push("https://landingpage.dshrat.com");
+        if (typeof window !== 'undefined' && params?.name === "Landing-Page" || params?.name === "Qr-Reader") {
+            if(params?.name === "Qr-Reader"){
+                router.push("https://qr.dshrat.com");
+            }
+            if(params?.name === "Landing-Page"){
+                router.push("https://landingpage.dshrat.com");
+            }
         }
     }, [params, router]);
 
